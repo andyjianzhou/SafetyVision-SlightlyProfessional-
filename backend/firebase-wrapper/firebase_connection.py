@@ -36,12 +36,20 @@ class firebase_connection:
             'time': time,
             'date': date,
             'location': location,
-            'weapon_type': weapon_type
+            'weapon_type': weapon_type,
+            'new':1
         }
         encoded_image_json = json.dumps(image_json, cls=NumpyArrayEncoder)
         childref.push(encoded_image_json)
 
+    def get_new_data(self):
+        childref = self.__ref.child('images')
+        snapshot = childref.order_by_child('new').equal_to(1).get()
+        for k,v in snapshot.items():
+            print(v)
 
 if __name__ == '__main__':
     fc = firebase_connection()
-    fc.save_image(image=np.array([[1,2,3,4],[1,2,4,5]]))
+    # for i in range(5):
+    #     fc.save_image(image=np.array([[1,2,3,4],[1,2,4,5]]))
+    fc.get_new_data()
