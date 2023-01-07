@@ -1,5 +1,6 @@
 import firebase_admin
 from firebase_admin import db
+import numpy as np
 
 class firebase_connection:
     def __init__(self):
@@ -20,7 +21,7 @@ class firebase_connection:
 
         childref = self.__ref.child('images')
         image_json = {
-            'image':'xyz',
+            'image':image,
             'time':time,
             'date':date,
             'location':location
@@ -29,4 +30,4 @@ class firebase_connection:
 
 if __name__ == '__main__':
     fc = firebase_connection()
-    fc.save_image('xyz')
+    fc.save_image(image='xyz')
