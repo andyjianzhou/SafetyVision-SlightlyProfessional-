@@ -1,5 +1,6 @@
 import firebase_admin
 from flask_bcrypt import Bcrypt
+from flask_mail import Mail, Message
 from flask import Flask, request, jsonify
 from firebase_admin import auth, credentials, db
 
@@ -12,6 +13,16 @@ cred = credentials.Certificate("C:/Users/rocky/OneDrive/Desktop/safetyvision-huh
 firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://safetyvision-huh-default-rtdb.firebaseio.com/'
 })
+
+app.config['MAIL_SERVER'] = 'sth.example.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USE_SSL'] = True
+# lower the security setting for Flask-Mail
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USERNAME'] = 'user@example.com'
+app.config['MAIL_PASSWORD'] = 'password'
+
+mail = Mail(app)
 
 
 @app.route('/')
@@ -35,6 +46,14 @@ def login():
             return 'Invalid password'
     except auth.ErrorInfo:
         return 'Invalid username'
+
+
+@app.route('/send')
+def send_email():
+    msg = Message('Hello', sender='user@example.com', recipients=[''])
+    msg.body = 'This is a test email sent from Flask-Mail'
+    mail.send(msg)
+    return 'Email sent'
 
 
 if __name__ == '__main__':
