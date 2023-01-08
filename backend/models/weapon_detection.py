@@ -6,8 +6,17 @@ from PIL import Image
 from firebase_connection import firebase_connection
 from datetime import date, datetime
 import time
-# Initialize the FirebaseWrapper class
 
+import random
+import string
+
+def get_random_string(length):
+    # choose from all lowercase letter
+    letters = string.ascii_letters + string.digits
+    result_str = ''.join(random.choice(letters) for i in range(length))
+    return result_str
+
+# Initialize the FirebaseWrapper class
 def score_frame(frame, mode):
     frame = Image.fromarray(frame)
     results = model(frame)
@@ -64,8 +73,9 @@ def detect():
                     print(weapon)
                     # boxes = output.xyxy[0][:, :-1].numpy() # get the bounding boxes
                     # convert output to numpy array
-                    image = np.array(img) # this is the image with bounding boxes and labels
-                    fc.save_image(image=image, weapon_type=weapon,location='DICE', time=str(current_time), date=str(current_day))
+                    img_name = get_random_string(12) + '.jpg'
+                    cv2.imwrite(img_name,img)
+                    fc.save_image(image=img_name, weapon_type=weapon,location='DICE', time=str(current_time), date=str(current_day))
                 else:
                     if time.time() - ct > 300:
                         ct = None
