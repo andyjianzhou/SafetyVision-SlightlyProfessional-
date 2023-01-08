@@ -2,27 +2,32 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import {
-    BrowserRouter as Router,
-    Routers,
-    Route,
-    Link
+    createBrowserRouter,
+    RouterProvider,
   } from "react-router-dom";
-import LoginForm from './components/pages/login';
-import RegisterForm from './components/pages/register';
-class Main extends React.Component {
-    render() {
-      return (
-        <div className = 'loginPage'>
-            <div className = 'loginDetails'>
-                <LoginForm/>
-            </div>
-        </div>
-      );
-    }
-}
-  
+import Login from "./login"
+import Register from "./register"
+
   // ========================================
   
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(<Main/>);
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <h1>Main index</h1>,
+    },
+    {
+        path: "/login",
+        element: <Login></Login>,
+    },
+    {
+        path: "/register",
+        element: <Register></Register>,
+    }
+  ]);
   
+  ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  );
