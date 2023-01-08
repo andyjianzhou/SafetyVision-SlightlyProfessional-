@@ -27,7 +27,7 @@ while True:
     cv2.imshow("frame", frame)
     output = model(frame)
     output.show()
-    if not output:
+    if output is None:
         print("No weapons detected")
     else:
         current_day = date.today()
