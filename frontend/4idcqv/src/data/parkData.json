@@ -1,0 +1,148 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "Event Data: EDM Night Toronto" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1,
+        "FACILITYID": 10,
+        "NAME": "Stage and Backstage Area",
+        "DATE": "27th January 2020",
+        "LOCATION": "Yonge-Dundas Square Toronto",
+        "HOURS": "6PM-10PM",
+        "ACCESS_TYPES": "STAFF and ARTISTS ONLY",
+        "ZONE_TYPE": "IN",
+        "ENTRACE_CONNCTED":true,
+        "NEAREST_ENTRANCE": "1",
+        "BAR": true,
+        "FOOD": true,
+        "LANES": 10,
+        "DESCRIPTIO": "This area is only for Staff and Artists"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ 53.526707,-113.523137]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1219,
+        "FACILITYID": 28001,
+        "NAME": "Entry 1 (General Admission)",
+        "DATE": "27th January 2020",
+        "LOCATION": "Yonge-Dundas Square Toronto",
+        "HOURS": "6PM-10PM",
+        "ACCESS_TYPES": "STAFF and ARTISTS ONLY",
+        "ZONE_TYPE": "IN",
+        "ENTRACE_CONNCTED":true,
+        "NEAREST_ENTRANCE": "1",
+        "BAR": true,
+        "FOOD": true,
+        "LANES": 10,
+        "DESCRIPTIO": "Entry for General admission tickets only. All access to Staff and Vendors"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [53.526707,-113.5231377]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1157,
+        "FACILITYID": 28002,
+        "NAME": "Entry 2 (VVIP and VIP tickets)",
+        "DATE": "27th January 2020",
+        "LOCATION": "Yonge-Dundas Square Toronto",
+        "HOURS": "6PM-10PM",
+        "ACCESS_TYPES": "STAFF and ARTISTS ONLY",
+        "ZONE_TYPE": "IN",
+        "ENTRACE_CONNCTED":true,
+        "NEAREST_ENTRANCE": "1",
+        "BAR": true,
+        "FOOD": true,
+        "LANES": 10,
+        "DESCRIPTIO": "Entry for VVIP/VIP tickets only. All access to Staff and Artists"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [53.526707,-113.523137]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 9,
+        "FACILITYID": 28006,
+        "NAME": "General Admission(GA) Area",
+        "DATE": "27th January 2020",
+        "LOCATION": "Yonge-Dundas Square Toronto",
+        "HOURS": "6PM-10PM",
+        "ACCESS_TYPES": "STAFF and ARTISTS ONLY",
+        "ZONE_TYPE": "IN",
+        "ENTRACE_CONNCTED":true,
+        "NEAREST_ENTRANCE": "1",
+        "BAR": true,
+        "FOOD": true,
+        "LANES": 10,
+        "DESCRIPTIO": "Only for General admission (GA). Full access to Staff and Vendors"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ 53.526707,-113.523137]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1160,
+        "FACILITYID": 28007,
+        "NAME": "Whyte Ave",
+        "DATE": "27th January 2020",
+        "LOCATION": "Yonge-Dundas Square Toronto",
+        "HOURS": "6PM-10PM",
+        "ACCESS_TYPES": "STAFF and ARTISTS ONLY",
+        "ZONE_TYPE": "IN",
+        "ENTRACE_CONNCTED":true,
+        "NEAREST_ENTRANCE": "1",
+        "BAR": true,
+        "FOOD": true,
+        "LANES": 10,
+        "DESCRIPTIO": "Main street for city of Strathcona, known for pubs and restaurants."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [53.5180008,-113.4716744]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1693,
+        "FACILITYID": 28016,
+        "NAME": "Cameron Building",
+        "DATE": "7th January 2023",
+        "LOCATION": "University of Alberta",
+        "HOURS": "6PM-10PM",
+        "ACCESS_TYPES": "STAFF and STUDENTS ONLY",
+        "ZONE_TYPE": "IN",
+        "ENTRACE_CONNCTED":true,
+        "NEAREST_ENTRANCE": "1",
+        "BAR": true,
+        "FOOD": true,
+        "LANES": 10,
+        "DESCRIPTIO": "Library for STEM Students at the University of Alberta."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [53.526707,-113.523137]
+      }
+    }
+
+  ]
+}
