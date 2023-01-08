@@ -1,0 +1,181 @@
+/* Add verdana font */
+
+
+.hero-background {
+    /* Create gradient gray background */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://slit.lol/domain/assets/media/realbg.gif");
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.two-columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.left-column {
+    margin-top: 150px;
+    width: 50%;
+    padding: 0 20px;
+    margin-left: 5%;
+}
+
+.left-column-content {
+    max-width: 500px;
+}
+
+.hero-title {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 4rem;
+    font-weight: 300;
+    margin: 0;
+    color: white;
+}
+
+.other-word {
+    /* make linear gradient */
+    background: linear-gradient(90deg, #e19a9a, #df7575);
+    /* Make text itself linear gradient */
+    /* background-clip: text; */
+}
+
+.hero-paragraph {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin: 0;
+    color: #f1f1f1;
+}
+
+.hero-button {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100px;
+    height: 60px;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+    border: 2px solid salmon;
+    position: relative;
+    z-index: 0;
+    /* Add a gap from the top text */
+    margin-left: 50px;
+}
+
+/* Add hover effect */
+.hero-button:hover {
+    color: white;
+    cursor:pointer;
+}
+
+.hero-button:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background: salmon;
+}
+
+.hero-button:hover:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+}
+
+
+.right-column {
+    width: 50%;
+    padding: 0 20px;
+}
+
+
+/* Move hero-image up and down using keyframe animations */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    /* Move image to the right */
+    margin-left: 8%;
+    animation: moveUpDown 5s ease-in-out infinite;
+}
+
+/* move hero-image up and down using keyframes */
+
+
+
+
+/* Create hero container
+.hero {
+    background-image: url("https://slit.lol/domain/assets/media/realbg.gif");
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.hero-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0;
+    color: #f1f1f1;
+}
+
+.hero-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+} */
+
