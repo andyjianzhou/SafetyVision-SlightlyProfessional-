@@ -14,13 +14,15 @@ from firebase_connection import firebase_connection
 fc = firebase_connection()
 
 model = torch.hub.load("yolov5", 'custom', path="yolov5s.pt", source='local') 
-# model.conf = 0.25
-model.conf = 0.05
-# model.iou = 0.45
+model.conf = 0.30
+# model.conf = 0.05
+model.iou = 0.45
 model.eval()
 
-image = cv2.imread("gas-gun.jpg")
+image = cv2.imread("gun-test.jpg")
 output = model(image)
+output.show()
+print(output)
 if not output:
   print("No weapons detected")
 else:
