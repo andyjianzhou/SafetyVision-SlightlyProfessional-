@@ -1,5 +1,4 @@
 from json import JSONEncoder
-import json
 import firebase_admin
 from firebase_admin import db
 import numpy as np
@@ -54,8 +53,25 @@ class firebase_connection:
 
         return snapshot
 
+    def user_auth(self,username,password):
+        childref = self.__ref.child('users')
+        pass
+
+    def create_user(self,username,password):
+        childref = self.__ref.child('users')
+        if not childref.child(username).get():
+            childref.child(username).set(password)
+            return True
+        return False
+
 if __name__ == '__main__':
     fc = firebase_connection()
-    for i in range(5):
-        fc.save_image(image=np.array([[1,2,3,4],[1,2,4,5]]))
-    fc.get_new_data()
+
+    # Test to add image
+    # for i in range(5):
+    #     fc.save_image(image=np.array([[1.02,2,3,4],[1,2,4,5]]))
+
+    # Test to get new data
+    # print(fc.get_new_data())
+
+    print(fc.create_user('hd','hd'))
