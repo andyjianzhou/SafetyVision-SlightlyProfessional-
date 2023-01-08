@@ -57,7 +57,7 @@
 }
 
 .loginPage {
-    margin-top: 300px;
+    margin-top: 150px;
     margin-left: 25%;
     margin-right: 25%;
     width: 50%;
@@ -86,10 +86,14 @@
 
 body {
     /* global 92%+ browsers support */
-    background-image: url("backgroundImage.jpg");
+    background-image: url("https://slit.lol/domain/assets/media/realbg.gif");
 }
 
 .mainToMove {
     margin: auto;
     align-self: center;
 }
+
+
+
+

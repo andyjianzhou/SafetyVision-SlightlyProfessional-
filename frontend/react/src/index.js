@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -25,15 +31,20 @@ class LoginForm extends React.Component {
         })
     }
     handleSubmit(event) {
-        
+        console.log("Removing")
+        event.preventDefault()
+        this.remove()
     }
     handleRegister(event) {
-        
+        event.preventDefault()
     }
     render() {
         return (
             <form onSubmit={this.handleSubmit} className = "mainToMove">
-                <img src='logo.png'></img>
+                <img src='https://github.com/andyjianzhou/SafetyVision-SlightlyProfessional-/blob/main/frontend/react/src/logo.png?raw=true'></img>
+                <br></br>
+                <br></br>
+                <br></br>
                 <label className='whatToDo'>
                     Username: 
                     
@@ -59,7 +70,7 @@ class LoginForm extends React.Component {
                     onChange = {this.handleChange}
                     />
                     <br></br>
-                <input className='loginSubmit' type="submit" value="Submit" onSubmit={this.handleSubmit} />
+                <input className='loginSubmit' type="submit" value="Login" onSubmit={this.handleSubmit} />
                 <br></br>
                 <br></br>
                 <br></br>
