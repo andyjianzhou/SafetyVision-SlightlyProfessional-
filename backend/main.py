@@ -3,10 +3,15 @@ from flask_bcrypt import Bcrypt
 from flask_mail import Mail, Message
 from flask import Flask, request, jsonify
 from firebase_admin import auth, credentials, db
+from mailchimp3 import MailChimpClient
 
 # Initialize the Flask app
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
+mail = Mail(app)
+client = MailChimpClient(mc_api='30948dc1e674a758d520c240546cbe78-us21')
+list_id = 'e70e1bdce4'
+
 
 # Initialize the Firebase Admin SDK with a service account JSON file
 cred = credentials.Certificate("C:/Users/rocky/OneDrive/Desktop/safetyvision-huh.json")
@@ -21,8 +26,6 @@ app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USERNAME'] = 'user@example.com'
 app.config['MAIL_PASSWORD'] = 'password'
-
-mail = Mail(app)
 
 
 @app.route('/')
@@ -55,6 +58,14 @@ def send_email():
     mail.send(msg)
     return 'Email sent'
 
+
+@app.route('/submit', methods=['POST'])
+def subscribe():
+    # Get the email address from the request data
+    email = request.form['email']
+
+    return email
+    
 
 if __name__ == '__main__':
     app.run(debug=True)

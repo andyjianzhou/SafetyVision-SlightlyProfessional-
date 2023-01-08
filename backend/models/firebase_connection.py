@@ -2,7 +2,7 @@ from json import JSONEncoder
 import firebase_admin
 from firebase_admin import db,storage
 import numpy as np
-
+import geocoder
 
 class NumpyArrayEncoder(JSONEncoder):
     def default(self, obj):
@@ -58,11 +58,12 @@ class firebase_connection:
         blob.make_public()
 
         childref = self.__ref.child('images')
+        g = geocoder.ip('me')
         image_json = {
             'image':  blob.public_url,
             'time': time,
             'date': date,
-            'location': location,
+            'location': g.latlng,
             'weapon_type': weapon_type,
             'new': 1
         }
@@ -130,7 +131,7 @@ if __name__ == '__main__':
     #     fc.save_image(image=np.array([[1.02,2,3,4],[1,2,4,5]]))
 
     # Test to get new data
-    print(fc.get_new_data())
+    # print(fc.get_new_data())
 
     # Test to create user
     # print(fc.create_user('hd', 'hd'))
