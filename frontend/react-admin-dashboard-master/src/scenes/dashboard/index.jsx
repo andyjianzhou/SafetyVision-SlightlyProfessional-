@@ -1,7 +1,8 @@
+import React from "react";
 import { Box, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
-
+import MyMap from "./MyMap"; // Import the MyMap component
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -12,7 +13,6 @@ const Dashboard = () => {
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" />
-
       </Box>
 
       {/* GRID & CHARTS */}
@@ -23,13 +23,16 @@ const Dashboard = () => {
         gap="20px"
       >
         <Box
-          gridColumn="span 8"
-          gridRow="span 4"
+          gridColumn="span 1"
+          gridRow="span 1"
           backgroundColor={colors.primary[400]}
         >
+          <div>
+            <MyMap /> {/* Use the MyMap component inside the div element */}
+          </div>
         </Box>
         <Box
-          gridColumn="span 4"
+          gridColumn="span 8"
           gridRow="span 4"
           backgroundColor={colors.primary[400]}
           p="30px"
