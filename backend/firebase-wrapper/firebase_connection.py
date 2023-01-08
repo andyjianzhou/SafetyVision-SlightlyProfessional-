@@ -52,8 +52,7 @@ class firebase_connection:
             keychildref.update(v)
             snapshot[k]['image'] = eval('np.array(' + v['image'] + ')')
 
-
-        print(snapshot)
+        return snapshot
 
 if __name__ == '__main__':
     fc = firebase_connection()
