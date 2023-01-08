@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "safetyvision-huh",
+  "private_key_id": "da4332d8495fd4e0ca13b421fadd089bc848318a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCQLAuVsk2oKAOw\ncMqKcSHYVF/YsyuJAmffYIA6fOoFEikLG4J8QgmvHq72ONCDoNXCP2FmNF+OK0UO\nwRiHwB9cOR+V2+AS+nRyATNJY2yOl43DhpsN/JQGd56qUN6pl4NSm75QuUzYcBq6\n/Ta2hi2hCCSYFH6BZEoLmvI+FysEjmmYZK0y9t4LxK003yK0RP1SzuLbCzzaFNb/\nie8RpwiwznYYyLh8SW+8k4l4TDo6RqqhibzDoeah0tVt9KHEbb0i/ie4goKcAHS5\nsrTH3tyY84BYvXPKr28f/KRRvN8ocXJZ+5BzvPi9iu1IfYFAAwFCiDr2deJNdI66\nL4SeHedPAgMBAAECggEAI8iy5Wh4quynocMVGpCi+GlU0toBy8Nrmb9/hETd5v1P\nb6DX3dScR7mDbrzCUHF6rPiDSdVlBEoMHXHjD0qp3f+VreIBt2Qvw941ZxlE6A2I\n08eUs7+F1CcbnCVvZsOjBj1+2tVrU+tbTx8rVdlu+OGnB5JKpf4I/OFsD+o7NKlu\n/mcRy2bYV2GlNZT4wnKx6Ij+Ck9lGwmn/BIL9eXn4i1Sax4Q6E1cGNekmY1U2LUp\nyFSverCN/K/EWWJAu4+LYL4b+ah3zAz3Gdxa6NpOKGNLfHxv4G9KKpeCT0dJZ8sX\nKrXxrmOfDBMkoOPkwI+5kjKx+DBUjLD1LdVdMeeBoQKBgQDC3m29l1VHilqsiGvo\nJbkW0xzDlk4y+bZm+ViGnSuzVqalVKRd6Kn+VcjehsuZeTU2sqQ2cSe0q3cxB4LR\n7qK2Tn8bGsvpww7DIXmlfeAVgq/UDOQbc3dOOm7RiJGQBcSObxkhsNWJnMZi9HxE\nLSrzTKIMQf0BL++kncLU7iMHLwKBgQC9Zj77FtM0oM+zBPkG1ekaL6uY/P+WZJ4w\n+4u8KmPXGAWThfI6cyrJofhbDg1RdVRc0HnNT048jNTi2oB6S34Bq+CGtMsy2Zvd\naV00kZtklKPhbkbb81wglXQP4jDcmBBs0QR/vLznTJxFlamxx0ltk8Dto3p7GiSv\n9oDkrC8Z4QKBgQCrv2CXRaba27zY7Y+1VnIQBNcIJxQa5210ynTUh/e5IzjS5IvN\nXL9esvrL7Z/KT0KwR7hlZ0uod6sgYk9ReXKdHQf3uqFYERuUrY9KZWu3aaxQR2BQ\nNW9EWknLkQNCHWNEafSLdhBuLefH1VUkvW5qavMzvIEhp78dphHOm2fx7wKBgQC2\n6hE3M6MEd64/iTTruhkmthU2alh4qXHxgm5AanwD1mpEQB9g/aq8EpYlchvAqNyx\nypFnjAjWB3juIfHkqhXmjVUJI3/++xRBsClYxKrbZ4YiB/udHpnByjTNxjhEQwPR\n48dBikix5VYjCdhaHko27nRrzO9UBjqaSinPLs9KYQKBgQC7InauGVG64BXLLjDI\nO8czbtclKwARYLM4KzIYUcJ7DcgZG7WqYU6EiiosoZgKJrBesNvu1Z9fB7BI+KE4\nuhBdvKzs5fVUpKs9jRo9xz6eE1GtTADmTW036mnJOvXiLqFin6Ar50pf2p+WYUX8\nMt67tK11AQUt0eB4V1UdmlO69Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-o1xit@safetyvision-huh.iam.gserviceaccount.com",
+  "client_id": "113912223259327175677",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-o1xit%40safetyvision-huh.iam.gserviceaccount.com"
+}
