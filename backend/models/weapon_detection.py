@@ -27,7 +27,7 @@ def plot_bounding_boxes(frame, labels, bounding_boxes):
 fc = firebase_connection()
 labels = {0: "Knife", 1:"Gun"}
 model = torch.hub.load("yolov5", 'custom', path="yolov5s.pt", source='local') 
-model.conf = 0.6
+model.conf = 0.63
 # model.conf = 0.05
 model.eval()
 
@@ -43,15 +43,31 @@ while True:
         print("failed to grab frame")
         break
     #convert frame to PIL image
-    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
     output = model(frame)
     output.render()
 
     for img in output.render():
+        #turn IMG into BGR
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         cv2.imshow("frame", img)
+        if output is not None:
+            current_day = date.today()
+            current_time = datetime.now().strftime("%H:%M:%S")
+            weapon = str(output)
+            weapon = 'pistol' if 'pistol' in weapon else 'knife'
+            print(weapon)
+            # boxes = output.xyxy[0][:, :-1].numpy() # get the bounding boxes
+            # convert output to numpy array
+            image = np.array(output.render()) # this is the image with bounding boxes and labels
+            fc.save_image(image=image, weapon_type=weapon,location='DICE', time=str(current_time), date=str(current_day))
+            #sleep for 10 minutes
+            time.sleep(600)
+        
         if cv2.waitKey(1) == ord("q"):
             break
 
+    
 
     
 # use webcam and plot bounding boxes on screen through opencv
