@@ -43,11 +43,12 @@ while True:
         print("failed to grab frame")
         break
     #convert frame to PIL image
-    frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     output = model(frame)
     output.render()
 
     for img in output.render():
+        img = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
         cv2.imshow("frame", img)
         if cv2.waitKey(1) == ord("q"):
             break
