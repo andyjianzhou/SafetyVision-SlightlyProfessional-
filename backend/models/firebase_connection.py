@@ -1,6 +1,6 @@
 from json import JSONEncoder
 import firebase_admin
-from firebase_admin import db
+from firebase_admin import db,storage
 import numpy as np
 
 
@@ -35,7 +35,8 @@ class firebase_connection:
     def __init__(self):
         self.__cred_obj = firebase_admin.credentials.Certificate('safetyvision-huh.json')
         self.__default_app = firebase_admin.initialize_app(self.__cred_obj, {
-            'databaseURL': 'https://safetyvision-huh-default-rtdb.firebaseio.com/'
+            'databaseURL': 'https://safetyvision-huh-default-rtdb.firebaseio.com/',
+            'storageBucket': 'safetyvision-huh.appspot.com'
         })
         self.__ref = db.reference('/')
         self.__sh = 4781
@@ -49,10 +50,16 @@ class firebase_connection:
         :param location: This is the string object
         :return: None
         """
+        bucket = storage.bucket()
+        blob = bucket.blob(image)
+        blob.upload_from_filename(image)
+
+        # Opt : if you want to make public access from the URL
+        blob.make_public()
 
         childref = self.__ref.child('images')
         image_json = {
-            'image': np.array2string(image, precision=3, separator=','),
+            'image':  blob.public_url,
             'time': time,
             'date': date,
             'location': location,
@@ -123,7 +130,7 @@ if __name__ == '__main__':
     #     fc.save_image(image=np.array([[1.02,2,3,4],[1,2,4,5]]))
 
     # Test to get new data
-    # print(fc.get_new_data())
+    print(fc.get_new_data())
 
     # Test to create user
     # print(fc.create_user('hd', 'hd'))
@@ -134,5 +141,5 @@ if __name__ == '__main__':
     # Test to add email
     # fc.add_email('hd1@hd.com')
 
-    # Test to get emails
-    print(fc.get_emails())
+    # # Test to get emails
+    # print(fc.get_emails())
