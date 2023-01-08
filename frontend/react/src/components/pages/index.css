@@ -1,0 +1,103 @@
+.loginSubmit {
+    background-color: rgba(0, 57, 117, 0);
+    border-width: 1px;
+    border-color: aliceblue;
+    color: white;
+    height: 35px;
+    width: 200px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.15s;
+    text-align: center;
+    margin-bottom: 200px;
+}
+
+.loginSubmit:hover{
+    background-color: rgba(57, 57, 57, 0.652);
+}
+
+.loginSubmit:active{
+    background-color: rgba(57, 57, 57, 0.236);
+}
+
+.registering {
+    background-color: rgba(0, 57, 117, 0);
+    border-width: 1px;
+    border-color: aliceblue;
+    color: white;
+    height: 20px;
+    width: 150px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.15s;
+    text-align: center;
+}
+
+.registering:hover{
+    background-color: rgba(57, 57, 57, 0.652);
+}
+
+.registering:active{
+    background-color: rgba(57, 57, 57, 0.236);
+}
+
+.loginInput {
+    background-color: rgb(0, 0, 0);
+    border-width: 1px;
+    /* make nice textbox borders padded */
+    padding: 5px;
+    border-color: aliceblue;
+    color: white;
+    height: 20px;
+    width: 200px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.15s;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.loginPage {
+    margin-top: 150px;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+}
+
+.whatToDo {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.infoText {
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body {
+    /* global 92%+ browsers support */
+    background-image: url("https://slit.lol/domain/assets/media/realbg.gif");
+}
+
+.mainToMove {
+    margin: auto;
+    align-self: center;
+}
+
+
+
+

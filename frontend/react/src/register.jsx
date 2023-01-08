@@ -42,7 +42,7 @@ export default function register() {
     }
     function handleSubmit(){
         let currSite = document.location.origin;
-        window.location.replace(currSite + "/main");
+        window.location.replace(currSite + "/mymap");
     }
     function handleRegister(){
         let currSite = document.location.origin;
@@ -78,7 +78,7 @@ export default function register() {
                 onChange = {handleChange}
                 />
                 <br></br>
-            <input name = "username" className='loginSubmit' type="button" value="Login" onClick={handleSubmit} />
+            <input name = "username" className='loginSubmit' type="button" value="Register" onClick={handleSubmit} />
             <br></br>
             <input name = "password" className='registering' type="button" value="Login Instead" onClick={handleRegister} />
         </form>

@@ -7,14 +7,15 @@ import {
   } from "react-router-dom";
 import Login from "./login"
 import Register from "./register"
-
+import Mapboard from "./MyMap"
+import Intro from "./components/pages/hero"
   // ========================================
   
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <script>window.location.replace(currSite + "/login"); </script>,
+      element: <Intro></Intro>,
     },
     {
         path: "/login",
@@ -23,7 +24,11 @@ import Register from "./register"
     {
         path: "/register",
         element: <Register></Register>,
-    }
+    },
+    {
+      path: "/mymap",
+      element: <Mapboard></Mapboard>
+    },
   ]);
   
   ReactDOM.createRoot(document.getElementById("root")).render(

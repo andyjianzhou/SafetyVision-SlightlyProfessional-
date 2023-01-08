@@ -42,7 +42,7 @@ export default function login() {
     }
     function handleSubmit(){
         let currSite = document.location.origin;
-        window.location.replace(currSite + "/main");
+        window.location.replace(currSite + "/mymap");
     }
     function handleRegister(){
         let currSite = document.location.origin;
