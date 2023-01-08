@@ -49,38 +49,41 @@ export default function register() {
         window.location.replace(currSite + "/login");
     }
     return (
-        <form className = "loginPage">
-            
-            <img src='https://github.com/andyjianzhou/SafetyVision-SlightlyProfessional-/blob/main/frontend/react/src/logo.png?raw=true'></img>
-            <br></br>
-            <br></br>
-            <br></br>
-            <label className='whatToDo'>
-                Username: 
-                
-            </label>
-            <br></br>
-            <input 
-                className= 'loginInput' 
-                type = "text"
-                name = "username"
-                onChange = {handleChange}
-                />
-            <label className='whatToDo'>
-                Password: 
-                
-            </label>
-            <br></br>
-            <input  
-                className= 'loginInput'
-                type = "text"
-                name = "password"
-                onChange = {handleChange}
-                />
+        <>
+        <div className = "login-background">
+            <form className = "loginPage">   
+                <img src='https://github.com/andyjianzhou/SafetyVision-SlightlyProfessional-/blob/main/frontend/react/src/logo.png?raw=true'></img>
                 <br></br>
-            <input name = "username" className='loginSubmit' type="button" value="Register" onClick={handleSubmit} />
-            <br></br>
-            <input name = "password" className='registering' type="button" value="Login Instead" onClick={handleRegister} />
-        </form>
+                <br></br>
+                <br></br>
+                <label className='whatToDo'>
+                    Username: 
+                    
+                </label>
+                <br></br>
+                <input 
+                    className= 'loginInput' 
+                    type = "text"
+                    name = "username"
+                    onChange = {handleChange}
+                    />
+                <label className='whatToDo'>
+                    Password: 
+                    
+                </label>
+                <br></br>
+                <input  
+                    className= 'loginInput'
+                    type = "text"
+                    name = "password"
+                    onChange = {handleChange}
+                    />
+                    <br></br>
+                <input name = "username" className='loginSubmit' type="button" value="Register" onClick={handleSubmit} />
+                <br></br>
+                <input name = "password" className='registering' type="button" value="Login Instead" onClick={handleRegister} />
+            </form>
+        </div>
+        </>
     )
 }

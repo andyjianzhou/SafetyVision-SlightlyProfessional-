@@ -12,7 +12,19 @@
     text-align: center;
     margin-bottom: 200px;
 }
-
+.login-background {
+    background-image: url("https://slit.lol/domain/assets/media/realbg.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 .loginSubmit:hover{
     background-color: rgba(57, 57, 57, 0.652);
 }
@@ -23,16 +35,19 @@
 
 .registering {
     background-color: rgba(0, 57, 117, 0);
+    /* make it below Login button */
     border-width: 1px;
     border-color: aliceblue;
     color: white;
-    height: 20px;
-    width: 150px;
+    height: 35px;
+    width: 200px;
     border-radius: 3px;
     cursor: pointer;
     margin-right: 10px;
     transition: background-color 0.15s;
     text-align: center;
+    margin-bottom: 20px;
+    
 }
 
 .registering:hover{
@@ -89,8 +104,10 @@
 }
 
 body {
-    /* global 92%+ browsers support */
-    background-image: url("https://slit.lol/domain/assets/media/realbg.gif");
+    /* global 92%+ browsers support
+    background-image: url("https://slit.lol/domain/assets/media/realbg.gif"); */
+    margin: 0;
+    padding: 0;
 }
 
 .mainToMove {

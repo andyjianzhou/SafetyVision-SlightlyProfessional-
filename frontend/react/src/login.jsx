@@ -49,6 +49,8 @@ export default function login() {
         window.location.replace(currSite + "/register");
     }
     return (
+        <>
+        <div className = "login-background">
         <form className = "loginPage">
             
             <img src='https://github.com/andyjianzhou/SafetyVision-SlightlyProfessional-/blob/main/frontend/react/src/logo.png?raw=true'></img>
@@ -79,8 +81,10 @@ export default function login() {
                 />
                 <br></br>
             <input name = "username" className='loginSubmit' type="button" value="Login" onClick={handleSubmit} />
-            <br></br>
+            {/* <br></br> */}
             <input name = "password" className='registering' type="button" value="Register Instead" onClick={handleRegister} />
         </form>
+        </div>
+        </>
     )
 }

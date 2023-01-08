@@ -1,5 +1,5 @@
 import React from 'react';
-import "./index.css";
+import "../hero.css"
 
 /*
 function constructor() {
@@ -38,13 +38,21 @@ export default function login() {
         window.location.replace(currSite + "/login");
     }
     return (
-        <form className = "loginPage">
-            <img src='https://github.com/andyjianzhou/SafetyVision-SlightlyProfessional-/blob/main/frontend/react/src/logo.png?raw=true'></img>
-            <br></br>
-            <br></br>
-            <br></br>
-            <input className='loginSubmit' type="button" value="Enter" onClick={handleSubmit} />
-            <br></br>
-        </form>
+        <>
+            <div className="hero-background">
+                <div className = "two-columns">
+                    <div className = "left-column">
+                        <div className = "left-column-content">
+                            <h1 className='hero-title'>Safety<span class="other-word">Vision.AI</span></h1>
+                            <p className='hero-paragraph'>Be safe wherever you are. Whatever you do.</p>
+                            <input className='hero-button' type="button" value="Enter" onClick={handleSubmit} />
+                        </div>
+                    </div>
+                    <div className='right-column'>
+                        <img src={require('../UI/robot.png')} alt='hero' className='hero-image' />
+                    </div>
+                </div>
+            </div>
+        </>
     )
 }

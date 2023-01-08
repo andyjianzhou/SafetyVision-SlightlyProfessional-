@@ -4,7 +4,7 @@
 .hero-background {
     /* Create gradient gray background */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://slit.lol/domain/assets/media/realbg.gif");
-    height: 100vh;
+    height: 150vh;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
