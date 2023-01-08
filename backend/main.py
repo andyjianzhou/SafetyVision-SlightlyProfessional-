@@ -1,5 +1,4 @@
 import firebase_admin
-from flask_bcrypt import Bcrypt
 from flask_mail import Mail, Message
 from flask import Flask, request, jsonify
 from firebase_admin import auth, credentials, db
@@ -7,7 +6,6 @@ from mailchimp3 import MailChimpClient
 
 # Initialize the Flask app
 app = Flask(__name__)
-bcrypt = Bcrypt(app)
 mail = Mail(app)
 client = MailChimpClient(mc_api='30948dc1e674a758d520c240546cbe78-us21')
 list_id = 'e70e1bdce4'
