@@ -2,107 +2,32 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
+    createBrowserRouter,
+    RouterProvider,
   } from "react-router-dom";
+import Login from "./login"
+import Register from "./register"
 
-class LoginForm extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            keys: Array(2).fill(' ')
-        }
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-    handleChange(event) {
-        let target = event.target;
-        console.log(target);
-        let name = target.name;
-        let value = target.value;
-        let which = target.name === "username" ? 0 : 1;
-        let notWhich = target.name === "username" ? 1 : 0
-        let saver = this.state.keys
-        saver[which] = value
-        this.setState({
-            keys: saver
-        })
-    }
-    handleSubmit(event) {
-        console.log("Removing")
-        event.preventDefault()
-        this.remove()
-    }
-    handleRegister(event) {
-        event.preventDefault()
-    }
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit} className = "mainToMove">
-                <img src='https://github.com/andyjianzhou/SafetyVision-SlightlyProfessional-/blob/main/frontend/react/src/logo.png?raw=true'></img>
-                <br></br>
-                <br></br>
-                <br></br>
-                <label className='whatToDo'>
-                    Username: 
-                    
-                </label>
-                <br></br>
-                <input 
-                    className= 'loginInput' 
-                    type = "text"
-                    name = "username"
-                    value = {this.state.value}
-                    onChange = {this.handleChange}
-                    />
-                <label className='whatToDo'>
-                    Password: 
-                    
-                </label>
-                <br></br>
-                <input  
-                    className= 'loginInput'
-                    type = "text"
-                    name = "password"
-                    value = {this.state.value}
-                    onChange = {this.handleChange}
-                    />
-                    <br></br>
-                <input className='loginSubmit' type="submit" value="Login" onSubmit={this.handleSubmit} />
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <input className='registering' type="submit" value="Make an Account" onSubmit={this.handleRegister} />
-            </form>
-        )
-    }
-}
-
-class Main extends React.Component {
-    render() {
-      return (
-        <div className = 'loginPage'>
-            <div className = 'loginDetails'>
-                <LoginForm/>
-            </div>
-        </div>
-      );
-    }
-}
-  
   // ========================================
   
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(<Main/>);
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <h1>Main index</h1>,
+    },
+    {
+        path: "/login",
+        element: <Login></Login>,
+    },
+    {
+        path: "/register",
+        element: <Register></Register>,
+    }
+  ]);
   
+  ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  );
