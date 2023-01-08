@@ -14,7 +14,7 @@ import Register from "./register"
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <h1>Main index</h1>,
+      element: <script>window.location.replace(currSite + "/login"); </script>,
     },
     {
         path: "/login",
