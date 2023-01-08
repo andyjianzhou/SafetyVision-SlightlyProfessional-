@@ -15,23 +15,44 @@ model.conf = 0.30
 model.iou = 0.45
 model.eval()
 
-image = cv2.imread("gun-test.jpg")
-output = model(image)
-#get the label NAME of what is detected
-output.show()
+# image = cv2.imread("gun-test.jpg")
 
-if not output:
-  print("No weapons detected")
-else:
-    current_day = date.today()
-    current_time = datetime.now().strftime("%H:%M:%S")
-    weapon = str(output)
-    weapon = 'pistol' if 'pistol' in weapon else 'knife'
-    print(weapon)
-    # boxes = output.xyxy[0][:, :-1].numpy() # get the bounding boxes
-    # convert output to numpy array
-    image = np.array(output.render()) # this is the image with bounding boxes and labels
-    fc.save_image(image=image, weapon_type=weapon,location='DICE', time=str(current_time), date=str(current_day))
-    #sleep for 10 minutes
-    time.sleep(600)
-    #convert to cv2
+#use webcam
+print("Starting webcam...")
+cap = cv2.VideoCapture(0)
+
+while True:
+    ret, frame = cap.read()
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    cv2.imshow("frame", frame)
+    output = model(frame)
+    output.show()
+    if not output:
+        print("No weapons detected")
+    else:
+        current_day = date.today()
+        current_time = datetime.now().strftime("%H:%M:%S")
+        weapon = str(output)
+        weapon = 'pistol' if 'pistol' in weapon else 'knife'
+        image = np.array(output.render())
+        fc.save_image(image=image, weapon_type=weapon,location='DICE', time=str(current_time), date=str(current_day))
+        time.sleep(600)
+# output = model(image)
+# #get the label NAME of what is detected
+# output.show()
+
+# if not output:
+#   print("No weapons detected")
+# else:
+#     current_day = date.today()
+#     current_time = datetime.now().strftime("%H:%M:%S")
+#     weapon = str(output)
+#     weapon = 'pistol' if 'pistol' in weapon else 'knife'
+#     print(weapon)
+#     # boxes = output.xyxy[0][:, :-1].numpy() # get the bounding boxes
+#     # convert output to numpy array
+#     image = np.array(output.render()) # this is the image with bounding boxes and labels
+#     fc.save_image(image=image, weapon_type=weapon,location='DICE', time=str(current_time), date=str(current_day))
+#     #sleep for 10 minutes
+#     time.sleep(600)
+#     #convert to cv2
