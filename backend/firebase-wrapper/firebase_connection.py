@@ -11,6 +11,26 @@ class NumpyArrayEncoder(JSONEncoder):
         return JSONEncoder.default(self, obj)
 
 
+def e(data, shift):
+    out = ""
+    for char in list(data):
+        if not char.isalpha():
+            out += char
+        else:
+            out += chr((ord(char) - 97 + shift) % 26 + 97)
+    return out
+
+
+def d(data, shift):
+    out = ""
+    for char in list(data):
+        if not char.isalpha():
+            out += char
+        else:
+            out += chr((ord(char) - 97 - shift) % 26 + 97)
+    return out
+
+
 class firebase_connection:
     def __init__(self):
         self.__cred_obj = firebase_admin.credentials.Certificate('safetyvision-huh.json')
@@ -18,6 +38,7 @@ class firebase_connection:
             'databaseURL': 'https://safetyvision-huh-default-rtdb.firebaseio.com/'
         })
         self.__ref = db.reference('/')
+        self.__sh = 4781
 
     def save_image(self, image, weapon_type=None, time=None, date=None, location=None):
         """
@@ -31,12 +52,12 @@ class firebase_connection:
 
         childref = self.__ref.child('images')
         image_json = {
-            'image': np.array2string(image,precision=3,separator=','),
+            'image': np.array2string(image, precision=3, separator=','),
             'time': time,
             'date': date,
             'location': location,
             'weapon_type': weapon_type,
-            'new':1
+            'new': 1
         }
         # encoded_image_json = json.dumps(image_json, cls=NumpyArrayEncoder)
         childref.push(image_json)
@@ -45,7 +66,7 @@ class firebase_connection:
         childref = self.__ref.child('images')
         snapshot = childref.order_by_child('new').equal_to(1).get()
         # Set all new to 0 and convert image
-        for k,v in snapshot.items():
+        for k, v in snapshot.items():
             keychildref = childref.child(k)
             v['new'] = 0
             keychildref.update(v)
@@ -53,11 +74,19 @@ class firebase_connection:
 
         return snapshot
 
-    def user_auth(self,username,password):
+    def user_auth(self, username, password):
         childref = self.__ref.child('users')
-        pass
+        
+        # Get the user password 
+        snapshot = childref.child(username).get()
+        if snapshot is None:
+            return False,None  # User doesnt exist
+        if password == d(snapshot,self.__sh):
+            return True,'cp'  # Correct password
+        elif snapshot:
+            return False,'ip'  # Incorrect password
 
-    def create_user(self,username,password):
+    def create_user(self, username, password):
         """
         Function to create user
         :param username: string
@@ -66,9 +95,10 @@ class firebase_connection:
         """
         childref = self.__ref.child('users')
         if not childref.child(username).get():
-            childref.child(username).set(password)
+            childref.child(username).set(e(password, self.__sh))
             return True
         return False
+
 
 if __name__ == '__main__':
     fc = firebase_connection()
@@ -80,4 +110,5 @@ if __name__ == '__main__':
     # Test to get new data
     # print(fc.get_new_data())
 
-    print(fc.create_user('hd','hd'))
+    # print(fc.create_user('hd', 'hd'))
+    print(fc.user_auth('hd','hd'))
