@@ -1,6 +1,6 @@
 import firebase_admin
 from flask_bcrypt import Bcrypt
-from flask import Flask, request, render_template
+from flask import Flask, request, jsonify
 from firebase_admin import auth, credentials, db
 
 # Initialize the Flask app
@@ -18,7 +18,7 @@ firebase_admin.initialize_app(cred, {
 def home():
     # Retrieve data from Firebase
     data = db.reference('data').get()
-    return render_template('base.html', data=data)
+    return jsonify(data)
 
 
 @app.route('/login', methods=['POST'])
