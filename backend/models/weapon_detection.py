@@ -6,7 +6,7 @@ from PIL import Image
 import os
 import sys 
 
-sys.path.insert(0, 'C:/Users/YOLO4/OneDrive/Desktop/SafetyVision-huh-/backend/firebase_wrapper')
+sys.path.insert(0, 'SafetyVision-huh-/backend/firebase_wrapper')
 
 from firebase_connection import firebase_connection
 
