@@ -65,8 +65,9 @@ function Map() {
           }}
         >
           <div>
-            <h2>{selectedPark.properties.NAME}</h2>
-            <p>{selectedPark.properties.DESCRIPTIO}</p>
+            {/* <h2>{selectedPark.properties.NAME}</h2>
+            <p>{selectedPark.properties.DESCRIPTIO}</p> */}
+            <p>THERE'S A GUN HERE!!!!</p>
           </div>
         </InfoWindow>
       )}
@@ -103,7 +104,7 @@ export default function Main() {
         </div>
       </div>
 
-      <div style={{ width: "600px", height: "600px" }}>
+      <div style={{ width: "1450px", height: "750px" }}>
         <MapWrapped
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyD7ltKHOtApQ3NpmEi_iHVda7pkpQZLQIs&v=3.exp&libraries=geometry,drawing,places}`}
           loadingElement={<div style={{ height: `100%` }} />}
