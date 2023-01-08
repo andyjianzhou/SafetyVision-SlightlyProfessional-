@@ -98,7 +98,22 @@ class firebase_connection:
             childref.child(username).set(e(password, self.__sh))
             return True
         return False
+    
+    def add_email(self,email):
+        childref = self.__ref.child('emails')
+        snapshot = childref.get()
+        if snapshot is None:
+            childref.set([email])
+        else:
+            if email not in snapshot:
+                snapshot.append(email)
+            childref.set(snapshot)
 
+    def get_emails(self):
+        childref = self.__ref.child('emails')
+        snapshot = childref.get()
+
+        return snapshot
 
 if __name__ == '__main__':
     fc = firebase_connection()
@@ -110,5 +125,14 @@ if __name__ == '__main__':
     # Test to get new data
     # print(fc.get_new_data())
 
+    # Test to create user
     # print(fc.create_user('hd', 'hd'))
-    print(fc.user_auth('hd','hd'))
+    
+    # Test to auth user
+    # print(fc.user_auth('hd','hd'))
+    
+    # Test to add email
+    # fc.add_email('hd1@hd.com')
+
+    # Test to get emails
+    print(fc.get_emails())
