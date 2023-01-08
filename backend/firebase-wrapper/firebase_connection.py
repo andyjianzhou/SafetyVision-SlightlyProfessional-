@@ -58,6 +58,12 @@ class firebase_connection:
         pass
 
     def create_user(self,username,password):
+        """
+        Function to create user
+        :param username: string
+        :param password: string
+        :return: True if successful else false
+        """
         childref = self.__ref.child('users')
         if not childref.child(username).get():
             childref.child(username).set(password)
